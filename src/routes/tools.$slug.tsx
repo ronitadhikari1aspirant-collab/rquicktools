@@ -34,7 +34,7 @@ export const Route = createFileRoute("/tools/$slug")({
 function ToolPage() {
   const { slug } = Route.useLoaderData();
   const tool = getTool(slug)!;
-  const Tool = TOOL_COMPONENTS[slug];
+  const Tool = TOOL_COMPONENTS[slug]!;
   const Icon = tool.icon;
   const others = TOOLS.filter((t) => t.slug !== slug).slice(0, 4);
 
