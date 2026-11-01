@@ -1,24 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ToolSearch } from "@/components/ToolSearch";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "QuickTools — Everything You Need. One Place." },
+      { name: "description", content: "Free everyday tools: QR codes, word counter, unit converter, age calculator, image resizer and more." },
+      { property: "og:title", content: "QuickTools — Everything You Need. One Place." },
+      { property: "og:description", content: "Simple, useful digital tools for everyday life." },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="pb-4 pt-14 text-center sm:pt-20">
+        <span className="inline-block rounded-full border bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+          8 free tools · No sign-up · Runs in your browser
+        </span>
+        <h1 className="mx-auto mt-5 max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">
+          Everything You Need. <span className="text-primary">One Place.</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          Simple, useful digital tools for everyday life.
+        </p>
+      </section>
+      <section className="mt-8">
+        <ToolSearch />
+      </section>
     </div>
   );
 }
