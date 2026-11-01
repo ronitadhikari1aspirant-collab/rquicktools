@@ -11,7 +11,7 @@ const CASES: { label: string; fn: (s: string) => string }[] = [
   { label: "lowercase", fn: (s) => s.toLowerCase() },
   { label: "Title Case", fn: (s) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()) },
   { label: "Sentence case", fn: (s) => s.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, (c) => c.toUpperCase()) },
-  { label: "camelCase", fn: (s) => words(s).map((w, i) => (i ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w.toLowerCase())).join("") },
+  { label: "camelCase", fn: (s) => words(s).map((w, i) => (i ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w.toLowerCase())).join("") },
   { label: "snake_case", fn: (s) => words(s).map((w) => w.toLowerCase()).join("_") },
   { label: "kebab-case", fn: (s) => words(s).map((w) => w.toLowerCase()).join("-") },
 ];

@@ -46,5 +46,7 @@ export function convertUnit(category: UnitCategory, value: number, from: string,
     return to === "Celsius" ? c : to === "Fahrenheit" ? (c * 9) / 5 + 32 : c + 273.15;
   }
   const table = UNITS[category];
-  return (value * table[from]) / table[to];
+  const f = table[from], t = table[to];
+  if (f === undefined || t === undefined) throw new Error("Unknown unit.");
+  return (value * f) / t;
 }

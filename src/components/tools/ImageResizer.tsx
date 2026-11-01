@@ -63,7 +63,7 @@ export default function ImageResizer() {
     }, format, 0.92);
   };
 
-  const ext = format.split("/")[1].replace("jpeg", "jpg");
+  const ext = (format.split("/")[1] ?? "png").replace("jpeg", "jpg");
 
   return (
     <div className="space-y-5">

@@ -19,8 +19,8 @@ export default function UnitConverter() {
   const changeCat = (c: UnitCategory) => {
     const u = unitsFor(c);
     setCat(c);
-    setFrom(u[0]);
-    setTo(u[1]);
+    setFrom(u[0] ?? "");
+    setTo(u[1] ?? "");
   };
 
   let result = "";

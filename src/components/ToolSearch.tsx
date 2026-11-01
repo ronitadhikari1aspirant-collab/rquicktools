@@ -17,7 +17,7 @@ export function ToolSearch({ autoFocus = false }: { autoFocus?: boolean }) {
         role="search"
         onSubmit={(e) => {
           e.preventDefault();
-          if (query.trim() && results[0]) navigate({ to: "/tools/$slug", params: { slug: results[0].slug } });
+          if (query.trim() && results[0]) navigate({ to: "/tools/$slug", params: { slug: results[0]!.slug } });
         }}
         className="mx-auto flex max-w-xl items-center gap-2 rounded-2xl border bg-card p-2 shadow-card focus-within:border-primary focus-within:ring-2 focus-within:ring-ring/30"
       >
