@@ -1,0 +1,12 @@
+[
+{
+"relation": ["delegate_permission/common.handle_all_urls"],
+"target": {
+"namespace": "android_app",
+"package_name": "app.lovable.rquicktools.twa",
+"sha256_cert_fingerprints": [
+"FE:A5:88:E6:34:08:98:3E:CB:54:0C:10:93:5E:95:10:81:5F:E1:EE:57:F0:D6:7B:11:FE:8B:0E:CA:A6:76:71"
+]
+}
+}
+]
